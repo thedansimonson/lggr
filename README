@@ -1,0 +1,49 @@
+--LL------GGGGGG--GGGGGG--RRRR----
+--LL------GG------GG------RR--RR--
+--LL------GG-GGG--GG-GGG--RRRR----
+--LL------GG--GG--GG--GG--RR--RR--
+--LLLLLL--GGGGGG--GGGGGG--RR--RR--
+
+lggr is a Python script for writing time-stamped logs. It is meant for your to write down notes as you work and otherwise stay out of your way. 
+
+lggr is not a text editor or a word processor. Word processors and text editors are made for things that are meant to be revised and edited; logs are generally written in a stream of consciousness manner and are designed to document a development process. Because of this design philosophy, you can't edit previous entries within lggr, though all output is text and can be edited and viewed elsewhere. 
+
+1. Using lggr
+Run the Python script. You can either type the name of a file or type the number of a recent file. After doing so, a new entry will be started.
+
+To write a new note, write it and push enter. This will save it to the list of notes for this particular entry and save the note to "backup_filename" in case of a system crash.
+
+When finished, type "done" to save the entry to the log and close lggr.
+
+2. Built-in functions.
+Built-in functions are still a work in progress. The only one working currently is "goof". 
+
+2.1. done
+syntax: done
+
+Saves the current entry to the intended log file and quits lggr.
+
+Note: quitting before executing "done"
+
+2.2. goof
+
+syntax: goof [future: time in minutes]
+
+goof removes the time between the previous entry and the time goof is executed from the "time worked" total. 
+
+It's meant for removing interruptions from the total time one spends working. The original time, "time delta," is preserved in logs as well as "time worked."
+
+2.3 todo
+syntax: todo [string of entry (no quotes)]
+
+todo creates or appends a todo list in parallel with a lggr log. Currently in development, doesn't really do anything.
+
+3. To-do list
+* Recover - merge a backup_ file with its intended log.
+* To-do list - a built in method for maintaining a to-do list in parallel with a log.
+* Better error handling for built in functions.
+* Clean up temporary files on close.
+* Get "taem" working.
+
+4. Current Work
+https://github.com/thedansimonson/lggr/

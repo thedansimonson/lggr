@@ -81,16 +81,21 @@ print "Logging is active. Time recorded: " + str(start)
 #built-in commands
 def goof(lastEntry): return datetime.now() - lastEntry
 def taem(lastEntry): print datetime.now()
+def todo(lastEntry, *args):
+	note = " ".join(args)
+	note = "".join("*",note) #bullet that list
 
 #built-in command/result dicts
 commands = {"goof": goof,
-			"time": taem}
+			"time": taem,
+			"todo": todo}
 
 
 zeroTime = datetime.now()
 zeroTime -= zeroTime
 results  = {"goof": [zeroTime,zeroTime],
-			"time": []}
+			"time": [],
+			"todo": []}
 
 #logging loop
 while entry != "done":
